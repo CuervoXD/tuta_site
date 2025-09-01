@@ -1,0 +1,174 @@
+/* ===== Base / utilidades ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg: #f6f6f6;
+    --color-white: #fff;
+    --color-dark: #22223b;
+    --color-text: #343a40;
+    --color-footer: #333;
+    --color-accent: #f9c74f;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* ===== Layout principal ===== */
+header {
+    background: linear-gradient(90deg, var(--color-footer) 60%, var(--color-accent) 100%);
+    color: var(--color-white);
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(51, 51, 51, 0.1);
+    border-radius: 0 0 16px 16px;
+}
+
+nav {
+    background: var(--color-footer);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    border-radius: 0 0 12px 12px;
+}
+
+nav a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s, background 0.2s;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: var(--color-white);
+    background: var(--color-accent);
+    outline: none;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: var(--color-white);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(51, 51, 51, 0.08);
+    padding: 2rem;
+}
+
+/* ===== Tipografía ===== */
+h1 {
+    color: var(--color-white);
+    /* Cambio: ahora el título es blanco */
+    margin-bottom: 1rem;
+}
+
+h2 {
+    color: var(--color-accent);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    color: var(--color-white);
+}
+
+p {
+    color: var(--color-text);
+}
+
+/* ===== Componentes ===== */
+footer {
+    background: var(--color-footer);
+    color: var(--color-white);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    border-radius: 0 0 16px 16px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(51, 51, 51, 0.08);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.button {
+    background: var(--color-footer);
+    color: var(--color-accent);
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(51, 51, 51, 0.12);
+    transition: background 0.2s, color 0.2s, transform 0.06s ease-in-out;
+    margin: 1rem auto;
+    display: block;
+    width: fit-content;
+    /* Cambio: el botón solo ocupará el espacio necesario */
+}
+
+.button:hover {
+    background: var(--color-accent);
+    color: var(--color-footer);
+}
+
+.button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+.button:active {
+    transform: translateY(1px);
+}
+
+/* ===== Lista de actividades ===== */
+/* Eliminar el contorno amarillo en hover para listas */
+ul li:hover,
+ol li:hover,
+.activities-list li:hover,
+.activity-item:hover {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* Si tienes una clase específica para los elementos de la lista, úsala aquí */
+.activity:hover,
+.list-item:hover {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* ===== Responsive pequeño ===== */
+@media (max-width: 640px) {
+    nav {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    main {
+        margin: 1rem;
+        padding: 1.25rem;
+    }
+}
